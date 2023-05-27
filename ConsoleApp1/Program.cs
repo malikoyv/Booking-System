@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp1
+namespace ConsoleApp1
 {
     internal class Program
     {
@@ -7,6 +7,7 @@
             string[] userInfo = new string[7];
             string[] repertuar = { "12:00", "13:30", "15:00", "16:30", "18:00", "20:00" };
             string[] film = { "Krzyk 7", "Szrek", "Avengers Finał" };
+            string[] labels = { "Your film:", "Your time:", "Name:", "Surname:", "Phone:", "E-mail:", "Number of tickets:" };
 
             Console.WriteLine("Welcome to our ticket booking system\nOur actual sessions:");
             foreach (string i in film)
@@ -19,6 +20,7 @@
                 Console.WriteLine("\nType your film:");
 
                 string userFilm = Console.ReadLine().ToLower();
+
 
                 foreach (string f in film)
                 {
@@ -108,15 +110,11 @@
                 Console.Clear();
 
                 Console.WriteLine("Your reservation information:\n");
-            
-                    Console.WriteLine($"Your film is: {userInfo[0]}");
-                    Console.WriteLine($"Your time is: {userInfo[1]}");
-                    Console.WriteLine($"Your name is: {userInfo[2]}");
-                    Console.WriteLine($"Your surname is: {userInfo[3]}");
-                    Console.WriteLine($"Your phone number is: {userInfo[4]}");
-                Console.WriteLine($"Your e-mail is: {userInfo[5]}");
-                Console.WriteLine($"Number of tickets: {userInfo[6]}");
 
+                for (int i = 0; i < labels.Length; i++)
+                {
+                    Console.WriteLine($"{labels[i]} {userInfo[i]}");
+                }
 
                 Console.WriteLine("\nIs everything correct? (True/False)");
                 confirmation = bool.Parse(Console.ReadLine().ToLower());
